@@ -43,10 +43,10 @@ public class Colosseum {
      * <p>
      * Requirements we should check the user for: <br>
      * - Hit points are between 1 and MAX_HIT_POINTS <br>
-     * - No more than 50 points are split between attack level and defense leve <br>
+     * - No more than 50 points are split between attack level and defense level <br>
      * - Attack level and defense level must have at least 1 point each <br>
      * Example of how this will look to the user:
-     * <p>
+     *      * <p>
      * Please name your Pokemon: Dolphin <br>
      * How many hit points will it have? (1-50): 50 <br>
      * Split fifty points between attack level and defense level <br>
@@ -73,6 +73,34 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        String inputPokemon;
+        System.out.println("Please name your Pokemon: ");
+        inputPokemon = myScan.next();
+        tempPokemon.name = inputPokemon;
+        int defenseMaxLevel =  tempPokemon.hitPoints - tempPokemon.attackLevel;
+
+        System.out.println("How many hit points will it have? (1-50): ");
+        if (tempPokemon.hitPoints >= 1 && tempPokemon.hitPoints < MAX_HIT_POINTS) {
+
+        } else {
+            System.out.println("Sorry. Hit points must be between 1 and 50:");
+        }
+
+        System.out.println("Enter your attack level (1-" + tempPokemon.hitPoints + "): ");
+        if (tempPokemon.attackLevel >= 1 && tempPokemon.attackLevel <= tempPokemon.hitPoints) {
+
+        } else {
+            System.out.println("Sorry. The attack level must be between 1 and 49: ");
+        }
+
+        System.out.println("Enter your defense level (1-" + tempPokemon.hitPoints + "): ");
+        if (tempPokemon.defenseLevel >= 1 && tempPokemon.defenseLevel <=
+                tempPokemon.hitPoints - tempPokemon.attackLevel) {
+
+        } else {
+            System.out.println("Sorry. The defense level must be between 1 and " + defenseMaxLevel + ":");
+        }
+
         return tempPokemon;
     }
 
@@ -90,6 +118,7 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
+
         System.out.println("Implement me!");
     }
 
@@ -101,6 +130,7 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
+
         System.out.println("Implement me!");
     }
 
