@@ -77,6 +77,7 @@ public class Colosseum {
         System.out.println("Please name your Pokemon: ");
         inputPokemon = myScan.next();
         tempPokemon.name = inputPokemon;
+
         int defenseMaxLevel =  tempPokemon.hitPoints - tempPokemon.attackLevel;
 
         System.out.println("How many hit points will it have? (1-50): ");
